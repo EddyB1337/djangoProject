@@ -4,10 +4,10 @@
 
 
 {% block content %}
-<div class="mt-6 px-6 py-12 bg-gray-100 rounded-xl">
+<div class="product-content">
         <h2 class="mb-12 text-2xl text-center">Produkte für {{ category.name }}</h2>
 
-        <div class="grid grid-cols-3 gap-3">
+        <div class="product-order">
             {% for item in related_items_to_category %}
                 <div>
                     <a href="{% url 'item:detail' item.id %}">
@@ -28,7 +28,7 @@
     <div class="mt-6 px-6 py-12 bg-gray-100 rounded-xl">
         <h2 class="mb-12 text-2xl text-center">Kategorien</h2>
 
-        <div class="grid grid-cols-3 gap-3">
+        <div class="product-order">
             {% for category in categories %}
                 <div>
                     <a href="{% url 'personal:categoryIndex' category.id %}">

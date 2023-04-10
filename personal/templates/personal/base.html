@@ -7,10 +7,58 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0f">
         <script src="https://cdn.tailwindcss.com"></script>
         <title>{% block title %}{% endblock %} | Elektrogeräte Leo</title>
+        <style>
+            .header {
+                background-color: red;
+                padding-left: 1.5rem;
+                padding-right: 1.5rem;
+                padding-top: 1.5rem;
+                padding-bottom: 1.5rem;
+                justify-content: space-between;
+                align-items: center;
+                border-bottom-width: 1px;
+                border-color: rgb(229 231 235);
+                display: flex;
+            }
+            .footer {
+                padding-left: 1.5rem;
+                padding-right: 1.5rem;
+                padding-top: 1.5rem;
+                padding-bottom: 1.5rem;
+                justify-content: space-between;
+                background-color: #1F2937;
+                display: flex;
+            }
+
+            .product-content{
+            margin-top: 1.5rem;
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+            padding-top: 3rem;
+            padding-bottom: 3rem;
+            background-color: #f5f5f5;
+            border-radius: 1.5rem;
+        }
+        .product-order{
+            display: grid;
+            grid-template-columns: auto auto auto;
+            gap: 3rem;
+        }
+        @media (max-width: 767px) {
+                .hidden-mobile {
+                    display: none;
+                }
+                .product-order{
+                    display: grid;
+                    grid-template-columns: auto;
+                    gap: 3rem;
+                }
+            }
+        </style>
     </head>
     <body>
 
-        <nav class="py-6 px-6 flex justify-between items-center border-b border-gray-200 bg-red-600"  >
+        <nav class="header"  >
             <a href="/">
             <img src="/media/Screen Shot 2023-04-08 at 8.50.06 PM.png" width="200" height="200">
 
@@ -24,7 +72,7 @@
                 <br>
                 <a class="text-2xl " style="color:white">E-GERÄTEN UND MÖBELN</a>
             </div>
-            <form action="/search" method="get">
+            <form action="/search" method="get" class="hidden-mobile">
                 <label for="search" style="color: white;">Suche:</label>
                 <input type="text" id="search" name="q">
             <button type="submit" style="color: white; background-color: transparent; border: none;"><i class="fa fa-search" style="color: white;"></i></button>
@@ -37,7 +85,7 @@
             {% endblock %}
         </div>
 
-        <footer class="py-6 px-6 flex justify-between bg-gray-800">
+        <footer class="footer">
             <div class="w-2/>3 pr-10">
                 <h3 class="mb-5 font-semibold text-gray-400">Informationen</h3>
 
